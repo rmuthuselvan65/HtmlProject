@@ -1,0 +1,88 @@
+
+body
+{
+
+}
+
+.divclss
+{
+    position: static;
+    width:200px;
+    height: 100px;
+    background-color: red;
+    margin-bottom: 10px;
+}
+
+.divclss:nth-child(2)
+{
+    position: sticky;
+    top:0;
+}
+
+.flexcontainer
+{
+    display: flex;
+}
+.flexcontainer div
+{
+    height: 50px;
+    width: 200px;
+    background-color: orange;
+    margin-left: 20px;
+    text-align: center;
+
+}
+
+.flexcontainer div:nth-child(1)
+{
+    order: 3;
+}
+
+.flexcontainer div:nth-child(3)
+{
+    order: 1;
+}
+
+.counterreset
+{
+    counter-reset:listvalue;
+}
+.counterreset li{
+    counter-increment: listvalue;
+    list-style-type: none;
+}
+.counterreset li::before
+{
+    content: counter(listvalue) " )"; 
+}
+
+.divbox
+{
+    border: 1px solid;
+    width: 200px;
+    height: 200px;
+    background: green;
+    animation-name: divmove;
+    animation-duration: 5s;
+    position: relative;
+    animation-delay: 2s;
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode:both;
+}
+
+@keyframes divmove
+{
+    from {
+        background: red;
+        left:0;
+        transform: rotate(0deg)
+    }
+to {
+    background: orange;
+    left:1200px;
+    transform: rotate(360deg)
+    
+}
+}
+
